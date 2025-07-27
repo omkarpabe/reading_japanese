@@ -1,9 +1,13 @@
 import streamlit as st
 import os
 import MeCab
+import unidic_lite
+tagger = MeCab.Tagger("-d " + unidic_lite.DICDIR + " -Owakati")
+
+
 
 # For MeCab config (Windows users)
-os.environ["MECABRC"] = r"C:\Program Files\MeCab\etc\mecabrc"
+
 
 st.title("Japanese Text Segmenter (MeCab + Streamlit)")
 
